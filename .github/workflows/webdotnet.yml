@@ -34,13 +34,13 @@ jobs:
         push: true
         image: dchand2021/demo-app
         registry: docker.io
-        tags: ${{ secrets.DOCKER_USERNAME }}/my-repo:${{ github.sha }}
+        tags: dchand2021/my-repo:${{ github.sha }}
         dockerfile: ./Dockerfile
         build-args: |
           ARG_NAME=VALUE
       env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_USERNAME: dchand2021
+        DOCKER_PASSWORD: Welcome@1982
 
 
 
