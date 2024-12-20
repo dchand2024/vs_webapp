@@ -23,6 +23,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore MVC_app/MVC_app.sln
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build  MVC_app/MVC_app.sln --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test MVC_app/MVC_app.sln --no-build --verbosity normal
