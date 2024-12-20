@@ -29,11 +29,19 @@ jobs:
 
     - name: Build and push Docker image
       uses: mr-smithers-excellent/docker-build-push@v4
-      with: 
-        image: dchand2021/demo-app
+      with:
+        context: .
+        push: true
+        iamge: dchand2021/demo-app
         registry: docker.io
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+        tags: ${{ secrets.DOCKER_USERNAME }}/my-repo:${{ github.sha }}
+        dockerfile: ./Dockerfile
+        build-args: |
+          ARG_NAME=VALUE
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
 
 
     
