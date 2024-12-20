@@ -32,7 +32,7 @@ jobs:
       with:
         context: .
         push: true
-        iamge: dchand2021/demo-app
+        image: dchand2021/demo-app
         registry: docker.io
         tags: ${{ secrets.DOCKER_USERNAME }}/my-repo:${{ github.sha }}
         dockerfile: ./Dockerfile
