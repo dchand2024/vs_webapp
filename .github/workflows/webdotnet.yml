@@ -26,18 +26,16 @@ jobs:
       run: dotnet build  MVC_app/MVC_app.sln --no-restore
     - name: Test
       run: dotnet test MVC_app/MVC_app.sln --no-build --verbosity normal
-      
+
     - name: Build and push Docker image
       uses: mr-smithers-excellent/docker-build-push@v4
-      with:
-        context: .
-        push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/my-repo:${{ github.sha }}
-        dockerfile: ./Dockerfile
-        build-args: |
-          ARG_NAME=VALUE
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      with: 
+        image: dchand2021/demo-app
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+
+    
         
     
