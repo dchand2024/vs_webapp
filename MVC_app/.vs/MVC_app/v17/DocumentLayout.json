@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nkumar1\\source\\repos\\MVC_app\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{25BEC469-FEEB-4F9C-A211-C0357AE7B530}|MVC_app\\MVC_app.csproj|c:\\users\\nkumar1\\source\\repos\\mvc_app\\mvc_app\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25BEC469-FEEB-4F9C-A211-C0357AE7B530}|MVC_app\\MVC_app.csproj|solutionrelative:mvc_app\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\nkumar1\\source\\repos\\MVC_app\\MVC_app\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "MVC_app\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\nkumar1\\source\\repos\\MVC_app\\MVC_app\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "MVC_app\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T05:31:09.366Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

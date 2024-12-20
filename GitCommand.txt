@@ -1,0 +1,14 @@
+Repo Name
+https://github.com/dchand2024/vs_webapp_new.git
+
+==============================================================================
+git init
+git add .
+git commit -m "Initial Commit"
+git remote add origin https://github.com/dchand2024/vs_webapp_new.git
+git push -u -f origin master
+
+git add "filename"
+git commit -m "message"
+git push 
+
