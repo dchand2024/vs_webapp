@@ -20,6 +20,9 @@ WORKDIR /MVC_app
 COPY ["MVC_app/MVC_app/MVC_app.csproj", "MVC_app/MVC_app/"]
 RUN dotnet restore "MVC_app/MVC_app/MVC_app.csproj"
 
+# Set the build configuration to Release (default is Debug if not set)
+ENV BUILD_CONFIGURATION=Release
+
 # Now copy the entire project and build
 COPY . .
 WORKDIR /MVC_app/MVC_app
