@@ -15,10 +15,10 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["MVC_app/MVC_app/MVC_app.csproj", "MVC_app/"]
-RUN dotnet restore "MVC_app/MVC_app/MVC_app.csproj"
+RUN dotnet restore "./MVC_app.csproj"
 COPY . .
 WORKDIR "/src/MVC_app"
-RUN dotnet build "MVC_app/MVC_app/MVC_app.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "./MVC_app.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
