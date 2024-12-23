@@ -36,7 +36,7 @@ jobs:
         image: dchand2021/demo-app
         registry: docker.io
         tags: dchand2021/my-repo:${{ github.sha }}
-        dockerfile: MVC_app/MVC_app/Dockerfile
+        dockerfile: MVC_app/Dockerfile
         build-args: |
           ARG_NAME=VALUE
       env:
