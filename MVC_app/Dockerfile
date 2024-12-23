@@ -16,8 +16,8 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["MVC_app/MVC_app/MVC_app.csproj", "MVC_app/MVC_app/"]
 COPY . .
-WORKDIR "/src/MVC_app"
-RUN dotnet build "./MVC_app.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/MVC_app/MVC_app"
+RUN dotnet build "MVC_app/MVC_app/MVC_app.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
