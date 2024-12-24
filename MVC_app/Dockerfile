@@ -24,7 +24,7 @@ RUN dotnet restore "MVC_app/MVC_app/MVC_app.csproj"
 ENV BUILD_CONFIGURATION=Release
 
 # Now copy the entire project and build
-COPY ..
+COPY . .
 WORKDIR /MVC_app/MVC_app
 RUN dotnet build "MVC_app.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
