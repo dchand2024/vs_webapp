@@ -8,8 +8,8 @@ EXPOSE 8080
 
 
 
-
-# Use the official .NET SDK image
+# Remove obj and bin directories to clean up previous build artifacts
+RUN rm -rf /app/obj /app/bin
 
 # Set the working directory in the container
 #WORKDIR /app
