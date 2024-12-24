@@ -22,7 +22,7 @@ RUN dotnet restore "MVC_app.csproj"
 
 # Copy the entire source code into the container
 COPY . ./
-#Clean and rebuild again
+# Clean and rebuild again
 RUN dotnet clean 
 
 # Build the application
