@@ -12,7 +12,7 @@ EXPOSE 8080
 # Use the official .NET SDK image
 
 # Set the working directory in the container
-WORKDIR /app
+#WORKDIR /app
 
 # Copy the project file(s) into the container
 COPY MVC_app/MVC_app/MVC_app.csproj ./ 
