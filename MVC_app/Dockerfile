@@ -1,5 +1,3 @@
-
-
 # See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
 # This stage is used when running from VS in fast mode (Default for Debug configuration)
@@ -10,33 +8,27 @@ EXPOSE 8080
 EXPOSE 8081
 
 
-# Use an official .NET SDK image to build the app
+
+# Use the official .NET SDK image
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 
-# Set the working directory to /src (change based on your repo structure)
-WORKDIR /MVC_app
-
-# Copy the csproj file and restore dependencies (this is essential for Docker to find the project file)
-COPY ["MVC_app/MVC_app/MVC_app.csproj", "MVC_app/MVC_app/"]
-RUN dotnet restore "MVC_app/MVC_app/MVC_app.csproj"
-
-# Set the build configuration to Release (default is Debug if not set)
-ENV BUILD_CONFIGURATION=Release
-
-# Now copy the entire project and build
-COPY . .
-WORKDIR /MVC_app/MVC_app
-RUN dotnet build "MVC_app.csproj" -c $BUILD_CONFIGURATION -o /app/build
-
-# Optionally, publish the app (for production)
-RUN dotnet publish "MVC_app.csproj" -c $BUILD_CONFIGURATION -o /app/publish
-
-# Use a smaller runtime image to run the app
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
+# Set the working directory in the container
 WORKDIR /app
-COPY --from=build /app/publish .
 
-# Set entry point
-ENTRYPOINT ["dotnet", "MVC_app.dll"]
+# Copy the project file(s) into the container
+COPY MVC_app/MVC_app/MVC_app.csproj ./ 
 
+# Restore dependencies (this step is optional but recommended to cache the restore layer)
+RUN dotnet restore "MVC_app.csproj"
 
+# Copy the entire source code into the container
+COPY . ./
+
+# Build the application
+RUN dotnet build "MVC_app.csproj" -c Release -o /app/build
+
+# Optionally, publish the application (if you plan to publish)
+RUN dotnet publish "MVC_app.csproj" -c Release -o /app/publish
+
+# Set the entry point for the container (adjust this based on your needs)
+ENTRYPOINT ["dotnet", "/app/publish/MVC_app.dll"]
