@@ -7,7 +7,6 @@ WORKDIR /app
 EXPOSE 8080
 
 
-
 # Remove obj and bin directories to clean up previous build artifacts
 RUN rm -rf /app/obj /app/bin
 
